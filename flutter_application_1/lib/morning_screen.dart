@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class LoadingScreen extends StatelessWidget {
+class MorningScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

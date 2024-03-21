@@ -1,9 +1,14 @@
+import 'package:socket_io_client/socket_io_client.dart' as IO;
+
+
+
 import 'package:flutter/material.dart';
 import 'profile.dart';
 import 'settings_screen.dart';
 
 import 'chat_screen.dart';
 import 'morning_screen.dart';
+import 'garden_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,15 +16,27 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue),
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: MaterialColor(0xFFD80101, {
+            50: Color(0xFFFFEBEE),
+            100: Color(0xFFFFCDD2),
+            200: Color(0xFFEF9A9A),
+            300: Color(0xFFE57373),
+            400: Color(0xFFEF5350),
+            500: Color(0xFFFF0000), // Your primary color
+            600: Color(0xFFE53935),
+            700: Color(0xFFD32F2F),
+            800: Color(0xFFC62828),
+            900: Color(0xFFB71C1C),
+          }),
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: ''),
     );
   }
 }
@@ -51,8 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(
             icon: Icon(Icons.settings),
             onPressed: () {
-              // Navigate to SettingsScreen
-              // This is a placeholder, replace SettingsScreen with your actual screen name
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => SettingsScreen()));
             },
@@ -60,8 +75,6 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(
             icon: Image.asset('assets/avatar1.png'),
             onPressed: () {
-              // Navigate to ProfileScreen
-              // Ensure you've imported profile.dart and defined ProfileScreen properly
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => ProfileScreen()));
             },
@@ -88,19 +101,16 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.add),
       ),
       bottomNavigationBar: Container(
-        height: 60, // Adjust the height as needed
-        color: Colors.black.withOpacity(0.5), // Black color with 50% opacity
+        height: 60,
+        color: Colors.black54, // Change the color here
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
               icon: Icon(Icons.chat_bubble, color: Colors.white),
-
-               onPressed: () {
-              // Navigate to SettingsScreen
-              // This is a placeholder, replace SettingsScreen with your actual screen name
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ChatScreen()));
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ChatScreen()));
               },
             ),
             IconButton(
@@ -108,14 +118,15 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LoadingScreen ()),
+                  MaterialPageRoute(builder: (context) => MorningScreen()),
                 );
               },
             ),
             IconButton(
               icon: Icon(Icons.battery_2_bar_outlined, color: Colors.white),
               onPressed: () {
-                // Navigate to Notifications Screen
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => GardenScreen()));
               },
             ),
           ],
