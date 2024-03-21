@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'profile.dart'; // Importing the profile.dart file
+import 'profile.dart';
 import 'settings_screen.dart';
+
+import 'chat_screen.dart';
+import 'morning_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,15 +53,17 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               // Navigate to SettingsScreen
               // This is a placeholder, replace SettingsScreen with your actual screen name
-              Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SettingsScreen()));
             },
           ),
           IconButton(
-            icon: Icon(Icons.info),
+            icon: Image.asset('assets/avatar1.png'),
             onPressed: () {
               // Navigate to ProfileScreen
               // Ensure you've imported profile.dart and defined ProfileScreen properly
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfileScreen()));
             },
           ),
         ],
@@ -81,6 +86,40 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
+      ),
+      bottomNavigationBar: Container(
+        height: 60, // Adjust the height as needed
+        color: Colors.black.withOpacity(0.5), // Black color with 50% opacity
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            IconButton(
+              icon: Icon(Icons.chat_bubble, color: Colors.white),
+
+               onPressed: () {
+              // Navigate to SettingsScreen
+              // This is a placeholder, replace SettingsScreen with your actual screen name
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ChatScreen()));
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.add, color: Colors.white),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoadingScreen ()),
+                );
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.battery_2_bar_outlined, color: Colors.white),
+              onPressed: () {
+                // Navigate to Notifications Screen
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

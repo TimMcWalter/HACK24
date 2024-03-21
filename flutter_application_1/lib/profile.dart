@@ -8,7 +8,7 @@ class ProfileScreen extends StatelessWidget {
         title: Text('Profile'),
       ),
       body: Center(
-        child: Text('Profile Screen'),
+        child: Image.asset('assets/photo1.jpg'),
       ),
     );
   }
