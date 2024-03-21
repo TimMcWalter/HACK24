@@ -1,19 +1,218 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
 
 class GardenScreen extends StatelessWidget {
-  const  GardenScreen({Key? key}) : super(key: key);
+  const GardenScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Garden'),
+        title: Text(''),
       ),
-      body: Center(
-        child: Text(
-          'Garden Screen',
-          style: TextStyle(fontSize: 24),
-        ),
+      body: Stack(
+        children: [
+          Center(
+            child: Image.asset(
+              'assets/garden_smalltree.png', // Change the image name here
+              fit: BoxFit.cover,
+            ),
+          ),
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.center,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WaterScreen()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.all(0),
+                  primary: Colors.transparent,
+                  elevation: 0,
+                ),
+                child: Container(
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.green.withOpacity(0.05),
+                  ),
+                  child: Center(
+                    child: Text(
+                      '.',
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class WaterScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(''),
+      ),
+      body: Stack(
+        children: [
+          Center(
+            child: Image.asset(
+              'assets/garden_water.png', // Change the image name here
+              fit: BoxFit.cover,
+            ),
+          ),
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.center,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FoodScreen()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.all(0),
+                  primary: Colors.transparent,
+                  elevation: 0,
+                ),
+                child: Container(
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.green.withOpacity(0.05),
+                  ),
+                  child: Center(
+                    child: Text(
+                      '.',
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class FoodScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(''),
+      ),
+      body: Stack(
+        children: [
+          Center(
+            child: Image.asset(
+              'assets/garden_food.png', // Change the image name here
+              fit: BoxFit.cover,
+            ),
+          ),
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.center,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BigtreeScreen()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.all(0),
+                  primary: Colors.transparent,
+                  elevation: 0,
+                ),
+                child: Container(
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.green.withOpacity(0.05),
+                  ),
+                  child: Center(
+                    child: Text(
+                      '.',
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+class BigtreeScreen extends StatelessWidget {
+@override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(''),
+      ),
+      body: Stack(
+        children: [
+          Center(
+            child: Image.asset(
+              'assets/garden_bigtree.png', // Change the image name here
+              fit: BoxFit.cover,
+            ),
+          ),
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.center,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyApp()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.all(0),
+                  primary: Colors.transparent,
+                  elevation: 0,
+                ),
+                child: Container(
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.green.withOpacity(0.05),
+                  ),
+                  child: Center(
+                    child: Text(
+                      '.',
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

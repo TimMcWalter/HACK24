@@ -64,6 +64,18 @@ flutter:
   assets:
     - assets/avatar1.png
     - assets/photo1.jpg
+    - assets/challenges.png
+    - assets/chat_vc.png
+    - assets/chatScreen.png
+    - assets/main_avatar.png
+    - assets/morning_page.png
+    - assets/tokens.png
+    - assets/bell.png
+    - assets/garden_bigtree.png
+    - assets/garden_food.png
+    - assets/garden_smalltree.png
+    - assets/garden_water.png
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

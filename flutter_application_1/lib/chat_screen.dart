@@ -7,12 +7,12 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chat'),
+        title: Text(''),
       ),
       body: Center(
-        child: Text(
-          'Chat Screen',
-          style: TextStyle(fontSize: 24),
+        child: Image.asset(
+          'assets/chatScreen.png', // Change the image name here
+          fit: BoxFit.cover,
         ),
       ),
     );

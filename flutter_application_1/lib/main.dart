@@ -1,7 +1,3 @@
-import 'package:socket_io_client/socket_io_client.dart' as IO;
-
-
-
 import 'package:flutter/material.dart';
 import 'profile.dart';
 import 'settings_screen.dart';
@@ -41,30 +37,24 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(title),
         actions: [
+          IconButton(
+            icon: Image.asset('assets/bell.png'),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfileScreen()));
+            },
+          ),
           IconButton(
             icon: Icon(Icons.settings),
             onPressed: () {
@@ -72,65 +62,54 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(builder: (context) => SettingsScreen()));
             },
           ),
-          IconButton(
-            icon: Image.asset('assets/avatar1.png'),
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ProfileScreen()));
-            },
-          ),
+          
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset(
+            'assets/main_avatar.png', // Adding avatar image
+            fit: BoxFit.cover,
+          ),
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: Container(
+              height: 60,
+              color: Colors.white10, // Change the color here
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.chat_bubble, color: Colors.white),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => ChatScreen()));
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.add, color: Colors.white),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MorningScreen()),
+                      );
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.battery_2_bar_outlined, color: Colors.white),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => GardenScreen()));
+                    },
+                  ),
+                ],
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
-      bottomNavigationBar: Container(
-        height: 60,
-        color: Colors.black54, // Change the color here
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconButton(
-              icon: Icon(Icons.chat_bubble, color: Colors.white),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ChatScreen()));
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.add, color: Colors.white),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MorningScreen()),
-                );
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.battery_2_bar_outlined, color: Colors.white),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => GardenScreen()));
-              },
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
