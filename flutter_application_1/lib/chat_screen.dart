@@ -20,37 +20,32 @@ class ChatScreen extends StatelessWidget {
           Positioned.fill(
             child: Align(
               alignment: Alignment.center,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AIchatScreen()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(0),
-                  primary: Colors.transparent,
-                  elevation: 0,
-                ),
-                child: Container(
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.transparent, // Transparent color
-                  ),
-                  child: Center(
-                    child: Text(
-                      '.', // Text here
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.transparent, // Transparent text color
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              child: GestureDetector(
+  onTap: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => AIchatScreen()),
+    );
+  },
+  child: Container(
+    width: 60,
+    height: 60,
+    decoration: BoxDecoration(
+      shape: BoxShape.circle,
+      color: Colors.transparent, // Transparent color
+    ),
+    child: Center(
+      child: Text(
+        '.', // Text here
+        style: TextStyle(
+          fontSize: 24,
+          color: Colors.transparent, // Transparent text color
+        ),
+      ),
+    ),
+  ),
+),
+
             ),
           ),
         ],

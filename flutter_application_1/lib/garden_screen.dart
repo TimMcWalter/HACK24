@@ -19,21 +19,13 @@ class GardenScreen extends StatelessWidget {
             ),
           ),
           Positioned.fill(
-            child: Align(
-              alignment: Alignment.center,
-              child: ElevatedButton(
-                onPressed: () {
+           child: GestureDetector(
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => WaterScreen()),
                   );
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(0),
-                  primary: Colors.transparent,
-                  elevation: 0,
-                ),
                 child: Container(
                   width: 60,
                   height: 60,
@@ -53,7 +45,7 @@ class GardenScreen extends StatelessWidget {
                 ),
               ),
             ),
-          ),
+          
         ],
       ),
     );
@@ -78,19 +70,13 @@ class WaterScreen extends StatelessWidget {
           Positioned.fill(
             child: Align(
               alignment: Alignment.center,
-              child: ElevatedButton(
-                onPressed: () {
+              child: GestureDetector(
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => FoodScreen()),
                   );
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(0),
-                  primary: Colors.transparent,
-                  elevation: 0,
-                ),
                 child: Container(
                   width: 60,
                   height: 60,
@@ -135,19 +121,13 @@ class FoodScreen extends StatelessWidget {
           Positioned.fill(
             child: Align(
               alignment: Alignment.center,
-              child: ElevatedButton(
-                onPressed: () {
+              child: GestureDetector(
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => BigtreeScreen()),
                   );
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(0),
-                  primary: Colors.transparent,
-                  elevation: 0,
-                ),
                 child: Container(
                   width: 60,
                   height: 60,
@@ -192,19 +172,13 @@ class BigtreeScreen extends StatelessWidget {
           Positioned.fill(
             child: Align(
               alignment: Alignment.center,
-              child: ElevatedButton(
-                onPressed: () {
+              child: GestureDetector(
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => MyApp()),
                   );
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(0),
-                  primary: Colors.transparent,
-                  elevation: 0,
-                ),
                 child: Container(
                   width: 60,
                   height: 60,
