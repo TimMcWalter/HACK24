@@ -5,6 +5,7 @@ import 'settings_screen.dart';
 import 'chat_screen.dart';
 import 'morning_screen.dart';
 import 'garden_screen.dart';
+import 'token_screen.dart'; // Import the TokensScreen
 
 void main() {
   runApp(const MyApp());
@@ -62,15 +63,28 @@ class MyHomePage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => SettingsScreen()));
             },
           ),
-          
         ],
       ),
       body: Stack(
-        fit: StackFit.expand,
         children: [
           Image.asset(
             'assets/main_avatar.png', // Adding avatar image
             fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
+          ),
+          Positioned(
+            top: kToolbarHeight + 16, // Positioning below app bar
+            left: 16,
+            child: IconButton(
+              icon: Icon(Icons.question_mark),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TokensScreen()),
+                );
+              },
+            ),
           ),
           Positioned(
             left: 0,
@@ -78,19 +92,19 @@ class MyHomePage extends StatelessWidget {
             bottom: 0,
             child: Container(
               height: 60,
-              color: Colors.white10, // Change the color here
+              color: Colors.transparent, // Make the container transparent
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   IconButton(
-                    icon: Icon(Icons.chat_bubble, color: Colors.white),
+                    icon: Icon(Icons.chat_bubble, color: Colors.transparent),
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => ChatScreen()));
                     },
                   ),
                   IconButton(
-                    icon: Icon(Icons.add, color: Colors.white),
+                    icon: Icon(Icons.add, color: Colors.transparent),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -99,7 +113,7 @@ class MyHomePage extends StatelessWidget {
                     },
                   ),
                   IconButton(
-                    icon: Icon(Icons.battery_2_bar_outlined, color: Colors.white),
+                    icon: Icon(Icons.battery_2_bar_outlined, color: Colors.transparent),
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => GardenScreen()));

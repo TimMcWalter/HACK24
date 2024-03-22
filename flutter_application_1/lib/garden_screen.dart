@@ -39,12 +39,15 @@ class GardenScreen extends StatelessWidget {
                   height: 60,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.green.withOpacity(0.05),
+                    color: Colors.transparent, // Transparent color
                   ),
                   child: Center(
                     child: Text(
-                      '.',
-                      style: TextStyle(fontSize: 24),
+                      '.', // Text here
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: Colors.transparent, // Transparent text color
+                      ),
                     ),
                   ),
                 ),
@@ -93,12 +96,15 @@ class WaterScreen extends StatelessWidget {
                   height: 60,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.green.withOpacity(0.05),
+                    color: Colors.transparent, // Transparent color
                   ),
                   child: Center(
                     child: Text(
-                      '.',
-                      style: TextStyle(fontSize: 24),
+                      '.', // Text here
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: Colors.transparent, // Transparent text color
+                      ),
                     ),
                   ),
                 ),
@@ -147,12 +153,15 @@ class FoodScreen extends StatelessWidget {
                   height: 60,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.green.withOpacity(0.05),
+                    color: Colors.transparent, // Transparent color
                   ),
                   child: Center(
                     child: Text(
-                      '.',
-                      style: TextStyle(fontSize: 24),
+                      '.', // Text here
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: Colors.transparent, // Transparent text color
+                      ),
                     ),
                   ),
                 ),
@@ -164,8 +173,9 @@ class FoodScreen extends StatelessWidget {
     );
   }
 }
+
 class BigtreeScreen extends StatelessWidget {
-@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -200,12 +210,15 @@ class BigtreeScreen extends StatelessWidget {
                   height: 60,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.green.withOpacity(0.05),
+                    color: Colors.transparent, // Transparent color
                   ),
                   child: Center(
                     child: Text(
-                      '.',
-                      style: TextStyle(fontSize: 24),
+                      '.', // Text here
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: Colors.transparent, // Transparent text color
+                      ),
                     ),
                   ),
                 ),
